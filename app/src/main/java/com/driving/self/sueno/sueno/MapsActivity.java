@@ -85,7 +85,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static MapsActivity mapsActivity;
     private MapAnimator mapAnimator = new MapAnimator();
 
-    //Bookmark todelete
     private static final int TRANSPARENCY_MAX = 100;
     private static final LatLng NEWARK = new LatLng(1.375895, 103.8358343);
     private static final LatLng NEAR_NEWARK =
