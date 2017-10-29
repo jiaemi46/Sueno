@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:translationZ="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1.01"
+        android:layout_marginLeft="200dp" >
+
+        <com.driving.self.sueno.sueno.DelayAutoCompleteTextView
+            android:id="@+id/geo_autocomplete"
+            android:imeOptions="actionDone"
+            android:layout_width="300px"
+            android:dropDownWidth="300px"
+            android:layout_height="fill_parent"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:padding="10dp"
+            android:translationZ="1dp" />
+
+        <ImageView
+            android:id="@+id/geo_autocomplete_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/car_model_tiny"
+            android:contentDescription="map_list_header_txt"
+            android:layout_gravity="center_vertical|end"
+            android:visibility="gone"
+            android:translationZ="1dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_SearchAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:translationZ="1dp"
+        android:layout_marginLeft="350dp"
+        android:text="Search" />
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/GridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:orientation="horizontal"
+        tools:context="com.example.user.kuruma.MapsActivity" >
+
+        <LinearLayout
+            android:layout_width="1392px"
+            android:layout_height="1266px"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="1392px"
+                android:layout_height="1000px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left|top"
+                    tools:context="com.example.user.kuruma.MapsActivity" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1392px"
+                android:layout_height="266px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1" >
+
+                <Button
+                    android:id="@+id/btn_nearbyRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/linearLayout"
+                    android:onClick="onClick"
+                    android:text="Restaurants" />
+
+                <Button
+                    android:id="@+id/btn_CancelAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout"
+                    android:layout_toEndOf="@+id/btn_nearbyRestaurants"
+                    android:onClick="onClick"
+                    android:text="Cancel Auto-Drive" />
+
+                <Button
+                    android:id="@+id/btn_autoDrive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout"
+                    android:layout_toEndOf="@+id/btn_CancelAnimation"
+                    android:onClick="onClick"
+                    android:text="Auto Drive" />
+
+                <Button
+                    android:id="@+id/btn_toDestination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/map"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/btn_autoDrive"
+                    android:onClick="onClick"
+                    android:text="To" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="656px"
+            android:layout_height="1266px"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="2">
+
+            <ImageView
+                android:id="@+id/iv_car"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:src="@drawable/car_model" />
+
+        </LinearLayout>
+
+    </GridLayout>
+
+
+</RelativeLayout>
